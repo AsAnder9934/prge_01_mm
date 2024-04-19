@@ -1,18 +1,12 @@
 import "./App.css";
-
-const lista_uzytkownikow = [
-  { imie: "Wojciech" },
-  { imie: "Maciej" },
-  { imie: "Marek" },
-  { imie: "Piotr" },
-];
+import Home from "./components/home/Home";
 
 function App() {
+  const imie = "tomasz";
+
   return (
     <div className="App">
-      {lista_uzytkownikow.map((zolnierz) => {
-        return <div>{zolnierz.imie}</div>;
-      })}
+      <Home text={imie} />
     </div>
   );
 }
