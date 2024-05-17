@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import plan_wat from "./Przechwytywanie.PNG";
+import { Link } from "react-router-dom";
 
 function Home({ text }) {
   return (
@@ -19,8 +20,9 @@ function Home({ text }) {
           <div className="home_right_subtitle">
             Strona internetowa z interaktywną mapą
           </div>
-
-          <button className="home_right_button">START</button>
+          <Link to="services">
+            <button className="home_right_button">START</button>
+          </Link>
         </div>
       </div>
     </div>
