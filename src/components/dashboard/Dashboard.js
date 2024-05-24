@@ -4,16 +4,23 @@ import MediaCard from "./Card";
 function Dashboard() {
   const input_list = [
     {
-      name: "Janek",
-      surname: "kowalski",
+      name: "Jan",
+      surname: "Kowalski",
       content: "jakiś opis",
       image:
         "https://marcinbiodrowski.com/wp-content/uploads/2018/03/dlaczego-warto-miec-dobre-zdjecie-w-CV.jpg",
     },
 
     {
-      name: "maciek",
+      name: "Maciej",
       surname: "Malinowski",
+      content: "jakiś opis",
+      image:
+        "https://marcinbiodrowski.com/wp-content/uploads/2018/03/dlaczego-warto-miec-dobre-zdjecie-w-CV.jpg",
+    },
+    {
+      name: "Wojciech",
+      surname: "Oleksy",
       content: "jakiś opis",
       image:
         "https://marcinbiodrowski.com/wp-content/uploads/2018/03/dlaczego-warto-miec-dobre-zdjecie-w-CV.jpg",
@@ -26,6 +33,7 @@ function Dashboard() {
           <MediaCard
             name={item.name}
             surname={item.surname}
+            content={item.content}
             image={item.image}
           />
         );
