@@ -9,6 +9,7 @@ import {
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
+import MarkerPlacement from "./MarkerPlacement";
 
 function Map() {
   const [wojewodztwa, setWojewodztwa] = useState(null);
@@ -69,6 +70,7 @@ function Map() {
               ""
             )}
           </LayersControl.Overlay>
+          <MarkerPlacement />
         </LayersControl>
       </MapContainer>
     </div>
