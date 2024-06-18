@@ -16,7 +16,7 @@ function Map() {
 
   const makePopup = (feature, layer) => {
     if (feature.properties) {
-      console.log(feature.properties.jpt_nazwa_);
+      // console.log(feature.properties.jpt_nazwa_);
       layer.bindPopup(`
         <h1> Dane województwa</h1>
         
@@ -28,7 +28,6 @@ function Map() {
   };
 
   useEffect(() => {
-    console.log("aaa");
     const getData = () => {
       axios
         .get(
@@ -37,8 +36,10 @@ function Map() {
           //"https://jsonplaceholder.typicode.com/posts/1"
         )
         .then((dane) => {
-          console.log(dane);
           setWojewodztwa(dane.data);
+        })
+        .catch((error) => {
+          console.log(`${error}`);
         });
     };
     getData();
@@ -63,7 +64,7 @@ function Map() {
               url="http://127.0.0.1:8080/geoserver/prge/wms"
             />
           </LayersControl.BaseLayer>
-          <LayersControl.Overlay checked name="Granice województw DB WFS">
+          <LayersControl.Overlay name="Granice województw DB WFS">
             {wojewodztwa ? (
               <GeoJSON data={wojewodztwa} onEachFeature={makePopup} />
             ) : (
